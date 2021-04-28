@@ -4,10 +4,9 @@ resource "aws_db_subnet_group" "oracle-subnet" {
   subnet_ids  = [aws_subnet.main-private-1.id, aws_subnet.main-private-2.id]
 }
 
-/*
 resource "aws_db_parameter_group" "oracle-parameters" {
   name        = "oracle-parameters"
-  family      = "oracle19.0"
+  family      = "oracle-ee-19.0"
   description = "oracleDB parameter group"
 
   parameter {
@@ -15,8 +14,7 @@ resource "aws_db_parameter_group" "oracle-parameters" {
     value = "16777216"
   }
 }
-*/
-  
+
 resource "aws_db_instance" "oracle" {
   allocated_storage       = 20 # 100 GB of storage, gives us more IOPS than a lower number
   engine                  = "oracle-ee"
