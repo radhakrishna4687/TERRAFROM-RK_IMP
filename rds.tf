@@ -30,6 +30,7 @@ resource "aws_db_instance" "oracle" {
   vpc_security_group_ids  = [aws_security_group.allow-oracle.id]
   storage_type            = "gp2"
   availability_zone       = aws_subnet.main-private-1.availability_zone # prefered AZ
+  skip_final_snapshot     = true
   tags = {
     Name = "oracle-instance"
   }
