@@ -20,7 +20,7 @@ resource "aws_db_parameter_group" "oracle-parameters" {
 resource "aws_db_instance" "oracle" {
   allocated_storage       = 20 # 100 GB of storage, gives us more IOPS than a lower number
   engine                  = "oracle-ee"
-  engine_version          = "19.0.0"
+  engine_version          = "19.0.0.0.ru-2021-01.rur-2021-01.r2"
   instance_class          = "db.m5.large" # use micro if you want to use the free tier
   identifier              = "oracledb"
   name                    = "awsiroracle01np"
